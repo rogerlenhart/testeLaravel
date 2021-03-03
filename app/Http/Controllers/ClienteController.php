@@ -13,15 +13,9 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    private $objCliente;
-
-    public function __construct(){
-        $this->objCliente=new Cliente();
-    }
-
     public function index()
     {
-        $cliente=$this->objCliente->all();
+        $cliente = Cliente::all();
         return view('index', compact('cliente'));
     }
     
@@ -44,7 +38,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $cad=$this->objCliente->create([
+        $cad = Cliente::create([
             'nome'=>$request->nome,
             'idade'=>$request->idade,
             'cidade'=>$request->cidade
@@ -63,7 +57,7 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        $cliente=$this->objCliente->find($id);
+        $cliente= Cliente::find($id);
         return view('show', compact('cliente'));
     }
 
@@ -75,7 +69,7 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $cliente=$this->objCliente->find($id);
+        $cliente = Cliente::find($id);
         return view('create', compact('cliente'));
     }
 
@@ -88,13 +82,11 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->objCliente->where(['id'=>$id])->update([
+        Cliente::where(['id'=>$id])->update([
             'nome'=>$request->nome,
             'idade'=>$request->idade,
             'cidade'=>$request->cidade
         ]);
-        
-        var_dump($request->nome);
 
         return redirect('clientes');
     }
@@ -107,7 +99,7 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        $this->objCliente->destroy($id);
+        Cliente::destroy($id);
         return redirect('clientes');
     }
 }

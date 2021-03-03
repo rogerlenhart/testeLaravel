@@ -27,7 +27,6 @@
             <input class="form-control" type="text" name="cidade" id="cidade" value="{{$cliente->cidade ?? ''}}" required>
         </div>
         <div class="mb-3">
-            <label for="" class="form-label"></label>
             <input class="btn btn-primary text-center" type="submit" value="@if(isset($cliente)) Editar @else Cadastrar @endif">
         </div>
     </form>
