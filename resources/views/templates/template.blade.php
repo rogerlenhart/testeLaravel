@@ -9,6 +9,10 @@
 </head>
 <body>
 <div class="container-fluid">
+    <h1 class="text-center mt-2">
+        @yield('title')
+    </h1>    
+    <hr>
     @yield('content')
 </div>
 </body>

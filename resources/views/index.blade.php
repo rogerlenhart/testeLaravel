@@ -1,8 +1,10 @@
 @extends('templates.template')
 
+@section('title')
+  <h1 class="text-center mt-2">CRUD Clientes</h1> 
+@endsection
+
 @section('content')
-  <h1 class="text-center mt-2">CRUD Clientes</h1>    
-  <hr>
   <div class="text-center">
     <a href="clientes/create">
       <button class="btn btn-success mt-2 mb-4">Cadastrar</button>
@@ -37,7 +39,7 @@
                 <form action="clientes/{{$clientes->id}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <input class="btn btn-danger" type="submit" value="Deletar" >
+                  <input class="btn btn-danger" type="submit" value="Deletar">
                 </form>
               </div>
               

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ClienteRequest;
 use App\Models\Cliente;
 
 class ClienteController extends Controller
@@ -36,7 +36,7 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClienteRequest $request)
     {
         $cad = Cliente::create([
             'nome'=>$request->nome,
@@ -80,7 +80,7 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ClienteRequest $request, $id)
     {
         Cliente::where(['id'=>$id])->update([
             'nome'=>$request->nome,
