@@ -7,7 +7,7 @@
 @section('content')
   <div class="text-center">
     <a href="clientes/create">
-      <button class="btn btn-success mt-2 mb-4">Cadastrar</button>
+      <button class="btn btn-success mt-2 mb-4"><i class="fa fa-plus-circle"></i> Cadastrar</button>
     </a>
   </div>
   <div class="col-8 m-auto dark">
@@ -30,26 +30,19 @@
             <td>{{$clientes->cidade}}</td>
             <td>
               <a class="text-decoration-none mx-1" href="{{url("clientes/$clientes->id")}}">
-                <button class="btn btn-dark">Visualizar</button>
+                <button class="btn btn-dark"><i class="fa fa-eye"></i></button>
               </a>
               <a class="text-decoration-none mx-1" href="{{url("clientes/$clientes->id/edit")}}">
-                <button class="btn btn-primary">Editar</button>
+                <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
               </a>
               <div class="mx-1" style="display:inline-block;">
                 <form action="clientes/{{$clientes->id}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <input class="btn btn-danger" type="submit" value="Deletar">
+                  <button class="btn btn-danger" type="submit" value="Deletar"><i class="fa fa-trash"></i></button>
+                  
                 </form>
-              </div>
-              
-
-              <!--
-              <a class="text-decoration-none mx-1" href="{{url("clientes/$clientes->id")}}">
-                <button class="btn btn-danger">Deletar</button>
-              </a>
-              -->
-              
+              </div>     
             </td>
           </tr>
         @endforeach
