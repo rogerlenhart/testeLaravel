@@ -6,13 +6,13 @@
 
 @section('content')
   <div class="text-center">
-    <a href="clientes/create">
+    <a href="clientes/create" class="d-grid gap-2 w-25 m-auto">
       <button class="btn btn-success mt-2 mb-4"><i class="fa fa-plus-circle"></i> Cadastrar</button>
     </a>
   </div>
-  <div class="col-8 m-auto dark">
-    <table class="table text-center align-middle">
-      <thead class="table-dark">
+  <div class="col-8 m-auto dark border border-dark">
+    <table class="table text-center align-middle mb-0">
+      <thead class="table-dark ">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Nome</th>
@@ -30,16 +30,16 @@
             <td>{{$clientes->cidade}}</td>
             <td>
               <a class="text-decoration-none mx-1" href="{{url("clientes/$clientes->id")}}">
-                <button class="btn btn-dark"><i class="fa fa-eye"></i></button>
+                <button class="btn btn-outline-dark"><i class="fa fa-eye"></i></button>
               </a>
               <a class="text-decoration-none mx-1" href="{{url("clientes/$clientes->id/edit")}}">
-                <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-outline-primary"><i class="fa fa-edit"></i></button>
               </a>
               <div class="mx-1" style="display:inline-block;">
                 <form action="clientes/{{$clientes->id}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit" value="Deletar"><i class="fa fa-trash"></i></button>
+                  <button class="btn btn-outline-danger " type="submit" value="Deletar"><i class="fa fa-trash"></i></button>
                   
                 </form>
               </div>     

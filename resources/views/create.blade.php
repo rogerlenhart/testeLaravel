@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="col-8 m-auto">
+  <div class="col-8 m-auto px-3 mt-4 shadow w-50">
 
     @if(isset($errors) && count($errors)>0)
         <div class="text-center my-4 p-2 alert-danger">
@@ -16,10 +16,10 @@
     @endif
 
     @if(isset($cliente))
-        <form name="editCliente" id="editCliente" method="post" action="{{url("clientes/$cliente->id")}}">
+        <form class="p-4" name="editCliente" id="editCliente" method="post" action="{{url("clientes/$cliente->id")}}">
             @method('PUT')
     @else
-        <form name="cadCliente" id="cadCliente" method="post" action="{{url('clientes')}}">
+        <form class="p-4" name="cadCliente" id="cadCliente" method="post" action="{{url('clientes')}}">
     @endif
 
         @csrf
@@ -35,7 +35,7 @@
             <label for="cidade" class="form-label">Cidade</label>
             <input class="form-control" type="text" name="cidade" id="cidade" value="{{$cliente->cidade ?? ''}}" required>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 mt-4 d-grid gap-2">
             <input class="btn btn-primary text-center" type="submit" value="@if(isset($cliente)) Editar @else Cadastrar @endif">
         </div>
     </form>

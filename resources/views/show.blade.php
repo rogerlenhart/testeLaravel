@@ -12,7 +12,7 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><b>Nome: </b>{{$cliente->nome}}</li>
-        <li class="list-group-item"><b>Idade: </b>{{$cliente->idade}}</li>
+        <li class="list-group-item"><b>Idade: </b>{{$cliente->idade}} anos</li>
         <li class="list-group-item"><b>Cidade: </b>{{$cliente->cidade}}</li>
       </ul>
     </div>
