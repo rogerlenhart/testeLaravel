@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark mb-3 px-3">
+        <h1 class="navbar-brand">
+            CRUD CLIENTE
+        </h1>
+    </nav> 
 <div class="container-fluid">
-    <h1 class="text-center mt-2">
-        @yield('title')
-    </h1>    
-    <hr>
     @yield('content')
 </div>
 </body>

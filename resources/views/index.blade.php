@@ -1,17 +1,13 @@
 @extends('templates.template')
 
-@section('title')
-  <h1 class="text-center mt-2">CRUD Clientes</h1> 
-@endsection
-
 @section('content')
   <div class="text-center">
-    <a href="clientes/create" class="d-grid gap-2 w-25 m-auto">
-      <button class="btn btn-success mt-2 mb-4"><i class="fa fa-plus-circle"></i> Cadastrar</button>
+    <a href="clientes/create">
+      <button class="btn btn-primary mt-2 mb-4"><i class="fa fa-plus-circle"></i> Cadastrar</button>
     </a>
   </div>
-  <div class="col-8 m-auto dark border border-dark">
-    <table class="table text-center align-middle mb-0">
+  <div class="col-8 m-auto dark">
+    <table class="table text-center table-hover align-middle mb-0 ">
       <thead class="table-dark ">
         <tr>
           <th scope="col">ID</th>
@@ -48,6 +44,9 @@
         @endforeach
       </tbody>
     </table>
+    <div class="d-flex justify-content-center mt-4">
+      {{$cliente->links("pagination::bootstrap-4")}}
+    </div>
   </div>
 
 @endsection

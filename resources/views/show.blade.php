@@ -1,9 +1,5 @@
 @extends('templates.template')
 
-@section('title')
-  <h1 class="text-center mt-2">Visualizar Cliente</h1> 
-@endsection
-
 @section('content')
   <div class="col-8 m-auto">
     <div class="card m-auto bg-dark mt-4" style="width: 24rem;">
